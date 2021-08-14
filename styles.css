@@ -38,10 +38,6 @@ body {
    background-color: rgba(0, 0, 0, 0.03);
 }
 
-.app__body--instruction {
-   margin-bottom: 10px;
-}
-
 .formGroup {
    width: 100%;
    margin-top: 5px;
@@ -58,6 +54,10 @@ body {
    border: 1px solid #ccc;
    border-radius: 5px;
    background: #f7f7f7;
+}
+
+.formGroup > select:required:invalid {
+   color: #828282 !important;
 }
 
 .btn {

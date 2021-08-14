@@ -12,17 +12,13 @@
    <body>
       <div class="app">
          <div class="app__header">
-            <h2>TNSS Receipt Generator</h2>
+            <h2>The Noble Receipt Generator</h2>
 
             <button class="btn logoutBtn">Log Out</button>
          </div>
 
          <div class="app__body">
-            <form onsubmit="(e) => handleSubmit(e)">
-               <h5 class="app__body--instruction">
-                  Please fill out these fields carefully
-               </h5>
-
+            <form>
                <div class="formGroup">
                   <label for="">Student's Name:</label>
                   <input
@@ -34,10 +30,20 @@
 
                <div class="formGroup">
                   <label for="">Class:</label>
-                  <select name="class" id="class">
+                  <select name="class" id="class" required>
                      <option value="" disabled hidden selected>
-                        --Choose Class--
+                        Choose Class
                      </option>
+                     <option>Creche</option>
+                     <option>K.G 1</option>
+                     <option>K.G 2</option>
+                     <option>NUR 1</option>
+                     <option>NUR 2</option>
+                     <option>PRY 1</option>
+                     <option>PRY 2</option>
+                     <option>PRY 3</option>
+                     <option>PRY 4</option>
+                     <option>PRY 5</option>
                      <option>JSS 1</option>
                      <option>JSS 2</option>
                      <option>JSS 3</option>
@@ -54,6 +60,19 @@
                      name="amount"
                      placeholder="Amount Paid"
                   />
+               </div>
+
+               <div class="formGroup">
+                  <label for="">Payment for:</label>
+                  <select name="purpose" id="purpose" required>
+                     <option selected>School Fee</option>
+                     <option>Uniform</option>
+                     <option>Sport Wear</option>
+                     <option>Jumuat Wear</option>
+                     <option>Cardigown</option>
+                     <option>Report Card</option>
+                     <option>ID Card</option>
+                  </select>
                </div>
 
                <input type="submit" value="Send" class="btn" />

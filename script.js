@@ -7,10 +7,12 @@ form.addEventListener("submit", (e) => {
    var s_name = e.target.name.value;
    const s_class = e.target.class.value;
    const amount = e.target.amount.value;
+   const purpose = e.target.purpose.value;
 
    console.log("Name", s_name);
    console.log("Class", s_class);
    console.log("Amount", amount);
+   console.log("Purpose", purpose);
 
    //    Hide the form
    form.style.display = "none";
@@ -26,9 +28,10 @@ form.addEventListener("submit", (e) => {
       s_name +
       "</h6><h6>Class: " +
       s_class +
-      "</h6>" +
-      "<h6>Amount Paid: " +
+      "</h6><h6>Amount Paid: " +
       amount +
+      "</h6><h6>Payment for: " +
+      purpose +
       "</h6>" +
       printBtn +
       refreshBtn;
@@ -38,6 +41,7 @@ form.addEventListener("submit", (e) => {
    e.target.name.value = "";
    e.target.class.value = "";
    e.target.amount.value = "";
+   e.target.purpose.value = "";
 });
 
 function refreshPage() {
