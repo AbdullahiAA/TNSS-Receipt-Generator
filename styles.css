@@ -31,7 +31,7 @@ body {
 }
 
 .app__body form {
-   display: none;
+   /* display: none; */
    padding: 40px 20px;
    max-width: 400px;
    width: 100%;
@@ -86,7 +86,7 @@ body {
 
 /* R E C E I P T   S T Y L E S */
 .app__receipt {
-   /* display: none; */
+   display: none;
    color: black !important;
    font-weight: 900 !important;
 }

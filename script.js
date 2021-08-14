@@ -87,6 +87,7 @@ function getTime() {
    let hour = date.getHours();
    let __hour = hour;
    if (hour > 12) __hour = hour - 12;
+   if (hour == 0) __hour = 12;
 
    let minute = date.getMinutes();
    if (minute < 10) minute = "0" + minute;
