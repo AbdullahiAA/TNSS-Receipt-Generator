@@ -96,7 +96,7 @@ body {
 }
 
 .app__receipt--addr {
-   font-size: 10px;
+   font-size: 5px;
 }
 
 .app__receipt--title {
@@ -109,6 +109,9 @@ body {
    border-bottom: 1px dotted black;
    padding-top: 5px;
    padding-bottom: 5px;
+   display: flex;
+   flex-direction: column;
+   gap: 1px;
 }
 
 .app__receipt--footer {
@@ -124,6 +127,7 @@ body {
 
 .app__receipt--footer > div > h6:first-child {
    padding-bottom: 20px;
+   margin-bottom: 2px;
    border-bottom: 1px solid black;
 }
 
