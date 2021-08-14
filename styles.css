@@ -88,7 +88,6 @@ body {
 .app__receipt {
    /* display: none; */
    color: black !important;
-
    font-weight: 900 !important;
 }
 
@@ -96,23 +95,17 @@ body {
    text-align: center;
 }
 
-.app__receipt--schName {
-   /* font-weight: 900; */
-}
-
 .app__receipt--addr {
    font-size: 10px;
 }
 
 .app__receipt--title {
-   /* font-weight: 900; */
-   margin-top: 25px;
-   margin-bottom: 25px;
+   margin-top: 10px;
+   margin-bottom: 10px;
    border: 1px dotted black;
 }
 
 .app__receipt--body {
-   /* border-top: 1px solid black; */
    border-bottom: 1px dotted black;
    padding-top: 5px;
    padding-bottom: 5px;
