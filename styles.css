@@ -31,6 +31,7 @@ body {
 }
 
 .app__body form {
+   display: none;
    padding: 40px 20px;
    max-width: 400px;
    width: 100%;
@@ -83,6 +84,60 @@ body {
    transform: scale(0.95);
 }
 
+/* R E C E I P T   S T Y L E S */
+.app__receipt {
+   /* display: none; */
+   color: black !important;
+
+   font-weight: 900 !important;
+}
+
+.app__receipt--header {
+   text-align: center;
+}
+
+.app__receipt--schName {
+   /* font-weight: 900; */
+}
+
+.app__receipt--addr {
+   font-size: 10px;
+}
+
+.app__receipt--title {
+   /* font-weight: 900; */
+   margin-top: 25px;
+   margin-bottom: 25px;
+   border: 1px dotted black;
+}
+
+.app__receipt--body {
+   /* border-top: 1px solid black; */
+   border-bottom: 1px dotted black;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.app__receipt--footer {
+   padding-top: 5px;
+   display: flex;
+   gap: 5px;
+}
+
+.app__receipt--footer > div {
+   flex: 1;
+   text-align: center;
+}
+
+.app__receipt--footer > div > h6:first-child {
+   padding-bottom: 20px;
+   border-bottom: 1px solid black;
+}
+
+.app__receipt--actionBtns {
+   margin-top: 20px;
+}
+
 @media only print {
    body {
       visibility: hidden;
@@ -92,8 +147,22 @@ body {
       visibility: visible;
    }
 
-   .printBtn,
-   .refreshBtn {
+   .app__receipt--actionBtns {
       visibility: hidden;
    }
 }
+
+/* 
+    Receipt ID -- Current Date + Today's Transaction Count
+    Trans Date
+    - Student's Name
+    - Class
+    - Amount Paid
+    - Purpose of Payment (Allow multiple choice)
+    - Mode of Payment*
+    - Depositor's Name
+    Depositor's Signature
+    Parent's Phone No
+    Bursar's Name (Cashier)
+    Bursar's Signature
+*/

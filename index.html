@@ -20,8 +20,9 @@
          <div class="app__body">
             <form>
                <div class="formGroup">
-                  <label for="">Student's Name:</label>
+                  <label for="s_name">Student's Name:</label>
                   <input
+                     id="s_name"
                      type="text"
                      name="name"
                      placeholder="Enter Student's name"
@@ -29,8 +30,8 @@
                </div>
 
                <div class="formGroup">
-                  <label for="">Class:</label>
-                  <select name="class" id="class" required>
+                  <label for="class">Class:</label>
+                  <select name="class" id="class">
                      <option value="" disabled hidden selected>
                         Choose Class
                      </option>
@@ -54,8 +55,9 @@
                </div>
 
                <div class="formGroup">
-                  <label for="">Amount:</label>
+                  <label for="amount">Amount:</label>
                   <input
+                     id="amount"
                      type="number"
                      name="amount"
                      placeholder="Amount Paid"
@@ -63,8 +65,8 @@
                </div>
 
                <div class="formGroup">
-                  <label for="">Payment for:</label>
-                  <select name="purpose" id="purpose" required>
+                  <label for="purpose">Payment for:</label>
+                  <select name="purpose" id="purpose">
                      <option selected>School Fee</option>
                      <option>Uniform</option>
                      <option>Sport Wear</option>
@@ -75,17 +77,71 @@
                   </select>
                </div>
 
+               <div class="formGroup">
+                  <label for="depositor">Paid By:</label>
+                  <input
+                     id="depositor"
+                     type="text"
+                     name="depositor"
+                     placeholder="Enter Depositor's name"
+                  />
+               </div>
+
                <input type="submit" value="Send" class="btn" />
             </form>
 
             <!-- Receipt -->
-            <div class="app__receipt"></div>
-            <!-- <input
-               type="button"
-               value="Print"
-               class="btn"
-               onclick="window.print()"
-            /> -->
+            <div class="app__receipt">
+               <div class="app__receipt--header">
+                  <h5 class="app__receipt--schName">
+                     THE NOBLE STANDARD SCHOOLS
+                  </h5>
+                  <p class="app__receipt--addr">
+                     Iyaloja Street, Ayegun Area, Off Olomi-academy, Ibadan
+                  </p>
+                  <h4 class="app__receipt--title">SCHOOL RECEIPT</h4>
+               </div>
+
+               <div class="app__receipt--body">
+                  <h6>Receipt ID: <span class="receiptID"></span></h6>
+                  <h6>Trans Date: <span class="transDate"></span></h6>
+                  <h6>Student Name: <span class="stdName"></span></h6>
+                  <h6>Class: <span class="class"></span></h6>
+                  <h6>Amount Paid: <span class="amount"></span></h6>
+                  <h6>Payment for: <span class="paymentFor"></span></h6>
+                  <h6>Payed by: <span class="PayedBy"></span></h6>
+                  <h6>Parent Tel: <span class="parentTel"></span></h6>
+               </div>
+
+               <div class="app__receipt--footer">
+                  <div>
+                     <h6>Signature:</h6>
+                     <h6 class="PayedBy"></h6>
+                     <h6>(Depositor)</h6>
+                  </div>
+
+                  <div>
+                     <h6>Signature:</h6>
+                     <h6 class="bursar">Abdullahi</h6>
+                     <h6>(Bursar)</h6>
+                  </div>
+               </div>
+
+               <div class="app__receipt--actionBtns">
+                  <input
+                     type="button"
+                     value="Print"
+                     class="btn printBtn"
+                     onclick="window.print()"
+                  />
+                  <input
+                     type="button"
+                     value="Refresh"
+                     class="btn refreshBtn"
+                     onclick="refreshPage()"
+                  />
+               </div>
+            </div>
          </div>
       </div>
 
