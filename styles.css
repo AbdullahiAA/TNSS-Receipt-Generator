@@ -96,6 +96,13 @@ fieldset.transCat > div > * {
    position: absolute;
    top: 1px;
    left: 1px;
+   z-index: 100;
+}
+
+.app {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
 }
 
 /* 
@@ -126,6 +133,10 @@ fieldset.transCat > div > * {
 */
 .app__body {
    padding: 20px 30px;
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .app__transForm {
