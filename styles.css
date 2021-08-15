@@ -1,5 +1,4 @@
 * {
-   padding: 0;
    margin: 0;
    box-sizing: border-box;
 }
@@ -37,6 +36,23 @@ body {
    width: 100%;
    margin: auto;
    background-color: rgba(0, 0, 0, 0.03);
+}
+
+fieldset {
+   display: flex;
+   gap: 30px;
+   padding: 15px;
+   padding-top: 10px;
+}
+
+fieldset > div {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+fieldset > div > * {
+   cursor: pointer;
 }
 
 .formGroup {

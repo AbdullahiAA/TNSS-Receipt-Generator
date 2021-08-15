@@ -19,6 +19,31 @@
 
          <div class="app__body">
             <form>
+               <fieldset class="formGroup">
+                  <legend>Transaction Catogory:</legend>
+
+                  <div>
+                     <input
+                        id="theNoble"
+                        type="radio"
+                        name="category"
+                        value="The Noble"
+                        checked
+                     />
+                     <label for="theNoble">The Noble</label>
+                  </div>
+
+                  <div>
+                     <input
+                        id="nujaba"
+                        type="radio"
+                        name="category"
+                        value="Nujabai"
+                     />
+                     <label for="nujaba">Nujabai'</label>
+                  </div>
+               </fieldset>
+
                <div class="formGroup">
                   <label for="s_name">Student's Name:</label>
                   <input
@@ -26,12 +51,13 @@
                      type="text"
                      name="name"
                      placeholder="Enter Student's name"
+                     required
                   />
                </div>
 
                <div class="formGroup">
                   <label for="class">Class:</label>
-                  <select name="class" id="class">
+                  <select name="class" id="class" required>
                      <option value="" disabled hidden selected>
                         Choose Class
                      </option>
@@ -61,12 +87,13 @@
                      type="number"
                      name="amount"
                      placeholder="Amount Paid"
+                     required
                   />
                </div>
 
                <div class="formGroup">
                   <label for="purpose">Payment for:</label>
-                  <select name="purpose" id="purpose">
+                  <select name="purpose" id="purpose" required>
                      <option selected>School Fee</option>
                      <option>Uniform</option>
                      <option>Sport Wear</option>
@@ -86,6 +113,7 @@
                      type="text"
                      name="depositor"
                      placeholder="Enter Depositor's name"
+                     required
                   />
                </div>
 
