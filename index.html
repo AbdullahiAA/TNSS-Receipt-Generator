@@ -18,9 +18,65 @@
          </div>
 
          <div class="app__body">
-            <form>
+            <!-- Signup Form -->
+            <form class="app__signupForm">
                <fieldset class="formGroup">
-                  <legend>Transaction Catogory:</legend>
+                  <legend>Registration Form:</legend>
+
+                  <div class="formGroup">
+                     <label for="u_name">Name:</label>
+                     <input
+                        id="u_name"
+                        type="text"
+                        name="u_name"
+                        placeholder="Enter your name"
+                        required
+                     />
+                  </div>
+
+                  <div class="formGroup">
+                     <label for="type">User Type:</label>
+                     <select name="type" id="type" required>
+                        <option value="" disabled hidden selected>
+                           Choose User
+                        </option>
+                        <option>Director</option>
+                        <option>Bursar</option>
+                        <option>Headmistress</option>
+                     </select>
+                  </div>
+
+                  <div class="formGroup">
+                     <label for="psw">Password</label>
+                     <input
+                        id="psw"
+                        type="password"
+                        name="psw"
+                        placeholder="Enter your password"
+                        required
+                     />
+                  </div>
+
+                  <div class="formGroup">
+                     <label for="c_psw">Confirm Password:</label>
+                     <input
+                        id="c_psw"
+                        type="password"
+                        name="c_psw"
+                        placeholder="Confirm your password"
+                        required
+                     />
+                  </div>
+                  <div>
+                     <input type="submit" value="Register" class="btn" />
+                  </div>
+               </fieldset>
+            </form>
+
+            <!-- Transaction Form -->
+            <form class="app__transForm">
+               <fieldset class="formGroup transCat">
+                  <legend>Transaction Category:</legend>
 
                   <div>
                      <input
@@ -120,7 +176,7 @@
                <input type="submit" value="Send" class="btn" />
             </form>
 
-            <!-- Receipt -->
+            <!-- Receipt Preview -->
             <div class="app__receipt">
                <div class="app__receipt--header">
                   <h5 class="app__receipt--schName">

@@ -1,3 +1,6 @@
+/* 
+    GLOBAL STYLES
+*/
 * {
    margin: 0;
    box-sizing: border-box;
@@ -9,30 +12,7 @@ body {
    color: #333333;
 }
 
-.app__header {
-   display: flex;
-   /* gap: 10px; */
-   justify-content: space-between;
-   align-items: center;
-   padding: 10px 20px;
-   background-color: #f7f7f7;
-   position: sticky;
-   top: 0;
-   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.03);
-}
-
-.logoutBtn {
-   margin: initial !important;
-   padding: 10px !important;
-   font-size: 12px !important;
-}
-
-.app__body {
-   padding: 20px 30px;
-}
-
-.app__body form {
-   /* display: none; */
+form {
    padding: 40px 20px;
    max-width: 400px;
    width: 100%;
@@ -49,13 +29,13 @@ fieldset {
    border: 1px solid black;
 }
 
-fieldset > div {
+fieldset.transCat > div {
    display: flex;
    align-items: center;
    gap: 5px;
 }
 
-fieldset > div > * {
+fieldset.transCat > div > * {
    cursor: pointer;
 }
 
@@ -104,7 +84,51 @@ fieldset > div > * {
    transform: scale(0.95);
 }
 
-/* R E C E I P T   S T Y L E S */
+/* 
+    HEADER STYLES
+*/
+
+.app__header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 20px;
+   background-color: #f7f7f7;
+   position: sticky;
+   top: 0;
+   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.03);
+}
+
+.logoutBtn {
+   margin: initial;
+   padding: 10px;
+   font-size: 12px;
+}
+
+/* 
+    BODY STYLES
+*/
+.app__body {
+   padding: 20px 30px;
+}
+
+.app__transForm {
+   display: none;
+}
+
+/* SIGNUP FORM */
+.app__signupForm {
+   /* display: none; */
+}
+
+.app__signupForm fieldset {
+   flex-direction: column;
+   gap: 0px;
+}
+
+/* 
+    R E C E I P T   S T Y L E S
+*/
 .app__receipt {
    display: none;
    color: black !important;
@@ -155,6 +179,9 @@ fieldset > div > * {
    margin-top: 20px;
 }
 
+/* 
+    PRINT STYLES
+*/
 @media only print {
    body {
       visibility: hidden;
