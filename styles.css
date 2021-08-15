@@ -126,6 +126,11 @@ fieldset.transCat > div > * {
    gap: 0px;
 }
 
+.app__signupForm legend {
+   font-size: 16px;
+   font-weight: 600;
+}
+
 /* 
     R E C E I P T   S T Y L E S
 */
