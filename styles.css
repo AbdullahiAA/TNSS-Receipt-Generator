@@ -14,7 +14,7 @@ body {
    /* gap: 10px; */
    justify-content: space-between;
    align-items: center;
-   padding: 10px 30px;
+   padding: 10px 20px;
    background-color: #f7f7f7;
    position: sticky;
    top: 0;
@@ -23,6 +23,8 @@ body {
 
 .logoutBtn {
    margin: initial !important;
+   padding: 10px !important;
+   font-size: 12px !important;
 }
 
 .app__body {
