@@ -14,4 +14,7 @@ logoutBtn.addEventListener("click", () => {
 
    // Show the Login form
    document.querySelector(".app__loginForm").style.display = "block";
+
+   //   Delete success msg if there is any
+   document.querySelector(".app__loginForm .error").innerHTML = "";
 });

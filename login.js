@@ -33,7 +33,7 @@ loginForm.addEventListener("submit", (e) => {
       document.querySelector(".logoutBtn").style.display = "inline-block";
    }
 
-   //   Hide success msg if there is any
+   //   Delete success msg if there is any
    document.querySelector(".app__loginForm .success").innerHTML = "";
 });
 
