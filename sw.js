@@ -6,12 +6,12 @@ self.addEventListener("install", (e) => {
             cache.addAll([
                "/",
                "/index.html",
-               "/index.js",
-               "/login.js",
-               "/logout.js",
-               "/register.js",
-               "/transaction.js",
-               "/styles.css",
+               "/script/index.js",
+               "/script/login.js",
+               "/script/logout.js",
+               "/script/register.js",
+               "/script/transaction.js",
+               "/css/styles.css",
                "/icon/icon.jpg",
             ])
          )
