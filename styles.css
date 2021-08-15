@@ -40,9 +40,11 @@ body {
 
 fieldset {
    display: flex;
-   gap: 30px;
+   gap: 20px;
    padding: 15px;
    padding-top: 10px;
+   border-radius: 5px;
+   border: 1px solid black;
 }
 
 fieldset > div {
