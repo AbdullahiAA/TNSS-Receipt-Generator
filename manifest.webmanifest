@@ -1,7 +1,7 @@
 {
    "background_color": "#F7F7F7",
    "description": "A receipt generator for The Noble Standard Schools",
-   "display": "fullscreen",
+   "display": "browser",
    "icons": [
       {
          "src": "icon/icon.jpg",
