@@ -5,11 +5,18 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+      <link rel="shortcut icon" href="icon/icon.jpg" type="image/jpg" />
+
       <title>TNSS Receipt Generator</title>
 
       <link rel="stylesheet" href="styles.css" />
+
+      <script src="index.js" defer></script>
+      <link rel="manifest" href="/manifest.webmanifest" />
    </head>
    <body>
+      <button class="add-button">Add to home screen</button>
+
       <div class="app">
          <div class="app__header">
             <h2>Receipt Generator</h2>
@@ -22,6 +29,8 @@
             <form class="app__signupForm">
                <fieldset class="formGroup">
                   <legend>Registration Form</legend>
+
+                  <p class="error"></p>
 
                   <div class="formGroup">
                      <label for="u_name">Name:</label>
@@ -69,6 +78,43 @@
                   </div>
                   <div>
                      <input type="submit" value="Register" class="btn" />
+                  </div>
+               </fieldset>
+            </form>
+
+            <!-- Login Form -->
+            <form class="app__loginForm">
+               <fieldset class="formGroup">
+                  <legend>Login Form</legend>
+
+                  <p class="error"></p>
+                  <p class="success"></p>
+
+                  <div class="formGroup">
+                     <label for="loginType">User Type:</label>
+                     <select name="type" id="loginType" required>
+                        <option value="" disabled hidden selected>
+                           Choose User
+                        </option>
+                        <option>Director</option>
+                        <option>Bursar</option>
+                        <option>Headmistress</option>
+                     </select>
+                  </div>
+
+                  <div class="formGroup">
+                     <label for="loginPsw">Password</label>
+                     <input
+                        id="loginPsw"
+                        type="password"
+                        name="psw"
+                        placeholder="Enter your password"
+                        required
+                     />
+                  </div>
+
+                  <div>
+                     <input type="submit" value="Login" class="btn" />
                   </div>
                </fieldset>
             </form>
@@ -208,8 +254,8 @@
 
                   <div>
                      <h6>Signature:</h6>
-                     <h6 class="bursar">Abdullahi</h6>
-                     <h6>(Bursar)</h6>
+                     <h6 class="userName"></h6>
+                     <h6 class="userType"></h6>
                   </div>
                </div>
 
@@ -231,6 +277,31 @@
          </div>
       </div>
 
-      <script src="script.js"></script>
+      <script src="transaction.js"></script>
+      <script src="register.js"></script>
+      <script src="login.js"></script>
+      <script src="logout.js"></script>
+
+      <script>
+         const name = localStorage.getItem("name");
+         const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+
+         if (!name) {
+            /*** No registered user ***/
+            // Show the registration form
+            document.querySelector(".app__signupForm").style.display = "block";
+         } else if (name && isLoggedIn) {
+            /*** Registered and LoggedIn ***/
+            // Show the transaction form
+            document.querySelector(".app__transForm").style.display = "block";
+
+            // Show the logout btn
+            document.querySelector(".logoutBtn").style.display = "inline-block";
+         } else {
+            /*** Registered but not LoggedIn ***/
+            // Show the Login form
+            document.querySelector(".app__loginForm").style.display = "block";
+         }
+      </script>
    </body>
 </html>

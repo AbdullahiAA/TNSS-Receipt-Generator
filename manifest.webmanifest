@@ -1,0 +1,15 @@
+{
+   "background_color": "#F7F7F7",
+   "description": "A receipt generator for The Noble Standard Schools",
+   "display": "fullscreen",
+   "icons": [
+      {
+         "src": "icon/icon.jpg",
+         "sizes": "192x192",
+         "type": "image/jpg"
+      }
+   ],
+   "name": "The Noble Standard Schools Receipt Generator",
+   "short_name": "TNSS Receipt Generator",
+   "start_url": "/index.html"
+}

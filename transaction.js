@@ -1,4 +1,4 @@
-const form = document.querySelector("form");
+const transForm = document.querySelector(".app__transForm");
 
 const receipt = document.querySelector(".app__receipt");
 
@@ -13,6 +13,9 @@ const classField = document.querySelector(".class");
 const amountField = document.querySelector(".amount");
 const paymentForField = document.querySelector(".paymentFor");
 const PayedByFields = document.querySelectorAll(".PayedBy");
+
+const userNameField = document.querySelector(".userName");
+const userTypeField = document.querySelector(".userType");
 
 const madrasahClasses = [
    "Pre-Nur",
@@ -59,7 +62,7 @@ transCategory.forEach((category) => {
 });
 
 // Handle Form Submission...
-form.addEventListener("submit", (e) => {
+transForm.addEventListener("submit", (e) => {
    e.preventDefault();
 
    //    Get the transaction date...
@@ -76,6 +79,10 @@ form.addEventListener("submit", (e) => {
    const purpose = e.target.purpose.value;
    const depositor = e.target.depositor.value;
 
+   //    Get the user data from localStorage
+   const userName = localStorage.getItem("name");
+   const userType = localStorage.getItem("userType");
+
    //    Format the amount into Naira...
    const formattedAmount = new Intl.NumberFormat("en-NG", {
       style: "currency",
@@ -84,7 +91,7 @@ form.addEventListener("submit", (e) => {
    }).format(amount);
 
    //    Hide the form...
-   form.style.display = "none";
+   transForm.style.display = "none";
 
    //    Fill the receipt with the data...
    receiptIDField.innerHTML = generateID();
@@ -95,6 +102,8 @@ form.addEventListener("submit", (e) => {
    paymentForField.innerHTML = purpose;
    PayedByFields[0].innerHTML = depositor;
    PayedByFields[1].innerHTML = depositor;
+   userNameField.innerHTML = userName;
+   userTypeField.innerHTML = "(" + userType + ")";
 
    //   Show the receipt...
    receipt.style.display = "block";
@@ -110,7 +119,7 @@ form.addEventListener("submit", (e) => {
 
 function refreshPage() {
    //    Show the form
-   form.style.display = "block";
+   transForm.style.display = "block";
 
    //    Hide the Receipt
    receipt.style.display = "none";
