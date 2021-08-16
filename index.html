@@ -11,6 +11,13 @@
 
       <link rel="stylesheet" href="css/styles.css" />
 
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+         crossorigin="anonymous"
+      />
+
       <script src="script/index.js" defer></script>
       <link rel="manifest" href="/manifest.webmanifest" />
    </head>
@@ -21,7 +28,19 @@
          <div class="app__header">
             <h2>Receipt Generator</h2>
 
-            <button class="btn logoutBtn">Log Out</button>
+            <div class="app__headerBtns">
+               <button class="btn transBtn" title="Add Transaction">
+                  <i class="fas fa-plus"></i>
+               </button>
+
+               <button class="btn settingsBtn" title="Settings">
+                  <i class="fas fa-settings"></i>
+               </button>
+
+               <button class="btn logoutBtn" title="Logout">
+                  <i class="fas fa-sign-out-alt"></i>
+               </button>
+            </div>
          </div>
 
          <div class="app__body">
@@ -274,6 +293,44 @@
                   />
                </div>
             </div>
+
+            <!-- Settings Form -->
+            <form class="app__settingsForm">
+               <fieldset class="formGroup">
+                  <legend>Settings</legend>
+
+                  <p class="success"></p>
+                  <p class="error"></p>
+
+                  <div class="formGroup">
+                     <label for="term">Term:</label>
+                     <select name="term" id="term" required>
+                        <option value="" disabled hidden selected>
+                           Choose Term
+                        </option>
+                        <option>1st Term</option>
+                        <option>2nd Term</option>
+                        <option>3rd Term</option>
+                     </select>
+                  </div>
+
+                  <div class="formGroup">
+                     <label for="session">Session:</label>
+                     <select name="session" id="session" required>
+                        <option value="" disabled hidden selected>
+                           Choose Session
+                        </option>
+                        <option>2020/2021</option>
+                        <option>2021/2022</option>
+                        <option>2022/2023</option>
+                     </select>
+                  </div>
+
+                  <div>
+                     <input type="submit" value="Update" class="btn" />
+                  </div>
+               </fieldset>
+            </form>
          </div>
       </div>
 
@@ -281,6 +338,7 @@
       <script src="script/register.js"></script>
       <script src="script/login.js"></script>
       <script src="script/logout.js"></script>
+      <script src="script/settings.js"></script>
 
       <script>
          const name = localStorage.getItem("name");
@@ -295,8 +353,9 @@
             // Show the transaction form
             document.querySelector(".app__transForm").style.display = "block";
 
-            // Show the logout btn
-            document.querySelector(".logoutBtn").style.display = "inline-block";
+            // Show the header btns
+            document.querySelector(".app__headerBtns").style.display =
+               "inline-block";
          } else {
             /*** Registered but not LoggedIn ***/
             // Show the Login form

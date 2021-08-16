@@ -26,11 +26,31 @@ loginForm.addEventListener("submit", (e) => {
       // Hide the LogIn Form
       document.querySelector(".app__loginForm").style.display = "none";
 
-      // Show the transaction form
-      document.querySelector(".app__transForm").style.display = "block";
+      // Show the header btn
+      document.querySelector(".app__headerBtns").style.display = "inline-block";
 
-      // Show the logout btn
-      document.querySelector(".logoutBtn").style.display = "inline-block";
+      // Login for the first time
+      //    ? go to settings page and update the term and the session
+      //    : show the transaction form...
+      const term = localStorage.getItem("term");
+
+      if (term) {
+         // Show the transaction form
+         document.querySelector(".app__transForm").style.display = "block";
+      } else {
+         // Show the settings form
+         document.querySelector(".app__settingsForm").style.display = "block";
+
+         // Show success msg on settings form
+         document.querySelector(".app__settingsForm .success").innerHTML =
+            "Logged in successfully, please update the term and the session!";
+
+         // Show error msg on settings form
+         document.querySelector(".app__settingsForm .error").innerHTML =
+            "NOTE: This should be updated at the beginning of every term.";
+
+         // TODO: Seperate settings box for madrasah and school
+      }
    }
 
    //   Delete success msg if there is any

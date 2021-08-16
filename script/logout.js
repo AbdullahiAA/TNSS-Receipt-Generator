@@ -3,8 +3,8 @@ const logoutBtn = document.querySelector(".logoutBtn");
 logoutBtn.addEventListener("click", () => {
    localStorage.setItem("isLoggedIn", false);
 
-   // Hide the logout btn
-   document.querySelector(".logoutBtn").style.display = "none";
+   // Hide the header btn
+   document.querySelector(".app__headerBtns").style.display = "none";
 
    // Hide the transaction form
    document.querySelector(".app__transForm").style.display = "none";
