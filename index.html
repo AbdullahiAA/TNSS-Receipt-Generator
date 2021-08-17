@@ -5,7 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <link rel="shortcut icon" href="icon/icon.jpg?v2" type="image/jpg" />
+      <link rel="shortcut icon" href="icon/icon.jpg" type="image/jpg" />
 
       <title>TNSS Receipt Generator</title>
 
@@ -58,13 +58,13 @@
                         type="text"
                         name="u_name"
                         placeholder="Enter your name"
-                        requiredd
+                        required
                      />
                   </div>
 
                   <div class="formGroup">
                      <label for="type">User Type:</label>
-                     <select name="type" id="type" requiredd>
+                     <select name="type" id="type" required>
                         <option value="" disabled hidden selected>
                            Choose User
                         </option>
@@ -81,7 +81,7 @@
                         type="password"
                         name="psw"
                         placeholder="Enter your password"
-                        requiredd
+                        required
                      />
                   </div>
 
@@ -92,7 +92,7 @@
                         type="password"
                         name="c_psw"
                         placeholder="Confirm your password"
-                        requiredd
+                        required
                      />
                   </div>
                   <div>
@@ -111,7 +111,7 @@
 
                   <div class="formGroup">
                      <label for="loginType">User Type:</label>
-                     <select name="type" id="loginType" requiredd>
+                     <select name="type" id="loginType" required>
                         <option value="" disabled hidden selected>
                            Choose User
                         </option>
@@ -128,7 +128,7 @@
                         type="password"
                         name="psw"
                         placeholder="Enter your password"
-                        requiredd
+                        required
                      />
                   </div>
 
@@ -172,13 +172,13 @@
                      type="text"
                      name="name"
                      placeholder="Enter Student's name"
-                     requiredd
+                     required
                   />
                </div>
 
                <div class="formGroup">
                   <label for="class">Class:</label>
-                  <select name="class" id="class" requiredd>
+                  <select name="class" id="class" required>
                      <option value="" disabled hidden selected>
                         Choose Class
                      </option>
@@ -208,13 +208,13 @@
                      type="number"
                      name="amount"
                      placeholder="Amount Paid"
-                     requiredd
+                     required
                   />
                </div>
 
                <div class="formGroup">
                   <label for="purpose">Payment for:</label>
-                  <select name="purpose" id="purpose" requiredd>
+                  <select name="purpose" id="purpose" required>
                      <option selected>School Fee</option>
                      <option>Uniform</option>
                      <option>Sport Wear</option>
@@ -234,7 +234,7 @@
                      type="text"
                      name="depositor"
                      placeholder="Enter Depositor's name"
-                     requiredd
+                     required
                   />
                </div>
 
@@ -304,7 +304,7 @@
 
                   <div class="formGroup">
                      <label for="tnssTerm">Term:</label>
-                     <select name="tnssTerm" id="tnssTerm" requiredd>
+                     <select name="tnssTerm" id="tnssTerm" required>
                         <option value="" disabled hidden selected>
                            Choose Term
                         </option>
@@ -320,15 +320,8 @@
                         name="tnssSession"
                         id="tnssSession"
                         class="session"
-                        requiredd
-                     >
-                        <!-- <option value="" disabled hidden selected>
-                           Choose Session
-                        </option>
-                        <option>2020/2021</option>
-                        <option>2021/2022</option>
-                        <option>2022/2023</option> -->
-                     </select>
+                        required
+                     ></select>
                   </div>
                </fieldset>
 
@@ -340,7 +333,7 @@
                      <select
                         name="madrasahSemester"
                         id="madrasahSemester"
-                        requiredd
+                        required
                      >
                         <option value="" disabled hidden selected>
                            Choose Semester
@@ -356,15 +349,8 @@
                         name="madrasahSession"
                         id="madrasahSession"
                         class="session"
-                        requiredd
-                     >
-                        <!-- <option value="" disabled hidden selected>
-                           Choose Session
-                        </option>
-                        <option>2020/2021</option>
-                        <option>2021/2022</option>
-                        <option>2022/2023</option> -->
-                     </select>
+                        required
+                     ></select>
                   </div>
                </fieldset>
 

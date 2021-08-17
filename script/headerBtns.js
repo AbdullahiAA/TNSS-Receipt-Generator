@@ -6,7 +6,6 @@ transBtn.addEventListener("click", () => {
    const term = localStorage.getItem("term");
 
    //    Only show the transaction form if the term has been updated
-
    if (term) {
       // Show the transaction form
       document.querySelector(".app__transForm").style.display = "block";
