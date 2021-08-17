@@ -76,8 +76,15 @@ transForm.addEventListener("submit", (e) => {
    const stdName = e.target.name.value;
    const stdClass = e.target.class.value;
    const amount = e.target.amount.value;
-   const purpose = e.target.purpose.value;
+   const paymentFor = document.querySelectorAll(
+      'input[name="paymentFor"]:checked'
+   );
    const depositor = e.target.depositor.value;
+
+   const purpose = getPaymentPurpose(paymentFor);
+
+   // Stop the processing if no purpose is selected
+   if (!purpose) return;
 
    let term, session;
 
@@ -139,7 +146,6 @@ transForm.addEventListener("submit", (e) => {
    e.target.name.value = "";
    e.target.class.value = "";
    e.target.amount.value = "";
-   e.target.purpose.value = "School Fee";
    e.target.depositor.value = "";
    transCategory[0].checked = true;
 });
@@ -250,4 +256,30 @@ function handleCategoryChange(value) {
 
       classOptions.append(newOption);
    });
+}
+
+function getPaymentPurpose(paymentFor) {
+   let selectedPurpose = "";
+
+   paymentFor.forEach((e, index) => {
+      if (selectedPurpose === "") {
+         selectedPurpose = e.value;
+      } else if (selectedPurpose !== "" && index !== paymentFor.length - 1) {
+         selectedPurpose += ", " + e.value;
+      } else {
+         selectedPurpose += " and " + e.value;
+      }
+
+      // Uncheck all after processing
+      if (e.value !== "School Fee") {
+         e.checked = false;
+      }
+   });
+
+   if (selectedPurpose === "") {
+      alert("Please select the purpose of the payment!");
+      return;
+   } else {
+      return selectedPurpose;
+   }
 }

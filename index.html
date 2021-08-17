@@ -212,21 +212,6 @@
                   />
                </div>
 
-               <div class="formGroup">
-                  <label for="purpose">Payment for:</label>
-                  <select name="purpose" id="purpose" required>
-                     <option selected>School Fee</option>
-                     <option>Uniform</option>
-                     <option>Sport Wear</option>
-                     <option>Jumuat Wear</option>
-                     <option>Cardigown</option>
-                     <option>Report Card</option>
-                     <option>ID Card</option>
-                     <option>Party</option>
-                     <option>Excursion</option>
-                  </select>
-               </div>
-
                <fieldset class="formGroup">
                   <legend>Payment For:</legend>
                   <div class="paymentForContainer">
@@ -234,44 +219,38 @@
                         <input
                            id="schFee"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="School Fee"
                            checked
                         />
                         <label for="schFee">School Fee</label>
                      </div>
+
                      <div>
                         <input
                            id="uniform"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="Uniform"
                         />
                         <label for="uniform">Uniform</label>
                      </div>
+
                      <div>
                         <input
                            id="sportWear"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="Sport Wear"
                         />
                         <label for="sportWear">Sport Wear</label>
                      </div>
-                     <div>
-                        <input
-                           id="jumatWear"
-                           type="checkbox"
-                           name="category"
-                           value="Jumuat Wear"
-                        />
-                        <label for="jumatWear">Jumuat Wear</label>
-                     </div>
+
                      <div>
                         <input
                            id="cardigown"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="Cardigown"
                         />
                         <label for="cardigown">Cardigown</label>
@@ -279,19 +258,19 @@
 
                      <div>
                         <input
-                           id="reportCard"
+                           id="jumatWear"
                            type="checkbox"
-                           name="category"
-                           value="Report Card"
+                           name="paymentFor"
+                           value="Jumuat Wear"
                         />
-                        <label for="reportCard">Report Card</label>
+                        <label for="jumatWear">Jumuat Wear</label>
                      </div>
 
                      <div>
                         <input
                            id="IDCard"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="ID Card"
                         />
                         <label for="IDCard">ID Card</label>
@@ -299,9 +278,19 @@
 
                      <div>
                         <input
+                           id="reportCard"
+                           type="checkbox"
+                           name="paymentFor"
+                           value="Report Card"
+                        />
+                        <label for="reportCard">Report Card</label>
+                     </div>
+
+                     <div>
+                        <input
                            id="party"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="Party"
                         />
                         <label for="party">Party</label>
@@ -311,7 +300,7 @@
                         <input
                            id="excursion"
                            type="checkbox"
-                           name="category"
+                           name="paymentFor"
                            value="Excursion"
                         />
                         <label for="excursion">Excursion'</label>
