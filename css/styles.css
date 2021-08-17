@@ -168,6 +168,24 @@ fieldset.transCat > div > * {
    margin-bottom: 15px;
 }
 
+.paymentForContainer {
+   /* flex-wrap: wrap; */
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   row-gap: 15px;
+}
+
+.paymentForContainer > div {
+   display: flex;
+   gap: 5px;
+   align-items: center;
+}
+
+.paymentForContainer > div > * {
+   cursor: pointer;
+}
+
 /* 
     R E C E I P T   S T Y L E S
 */
