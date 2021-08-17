@@ -121,6 +121,10 @@ fieldset.transCat > div > * {
    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.03);
 }
 
+.app__header h2 {
+   font-size: 16px;
+}
+
 .app__headerBtns {
    display: none;
 }

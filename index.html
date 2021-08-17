@@ -34,7 +34,7 @@
                </button>
 
                <button class="btn settingsBtn" title="Settings">
-                  <i class="fas fa-settings"></i>
+                  <i class="fas fa-cog"></i>
                </button>
 
                <button class="btn logoutBtn" title="Logout">
@@ -58,13 +58,13 @@
                         type="text"
                         name="u_name"
                         placeholder="Enter your name"
-                        required
+                        requiredd
                      />
                   </div>
 
                   <div class="formGroup">
                      <label for="type">User Type:</label>
-                     <select name="type" id="type" required>
+                     <select name="type" id="type" requiredd>
                         <option value="" disabled hidden selected>
                            Choose User
                         </option>
@@ -81,7 +81,7 @@
                         type="password"
                         name="psw"
                         placeholder="Enter your password"
-                        required
+                        requiredd
                      />
                   </div>
 
@@ -92,7 +92,7 @@
                         type="password"
                         name="c_psw"
                         placeholder="Confirm your password"
-                        required
+                        requiredd
                      />
                   </div>
                   <div>
@@ -111,7 +111,7 @@
 
                   <div class="formGroup">
                      <label for="loginType">User Type:</label>
-                     <select name="type" id="loginType" required>
+                     <select name="type" id="loginType" requiredd>
                         <option value="" disabled hidden selected>
                            Choose User
                         </option>
@@ -128,7 +128,7 @@
                         type="password"
                         name="psw"
                         placeholder="Enter your password"
-                        required
+                        requiredd
                      />
                   </div>
 
@@ -172,13 +172,13 @@
                      type="text"
                      name="name"
                      placeholder="Enter Student's name"
-                     required
+                     requiredd
                   />
                </div>
 
                <div class="formGroup">
                   <label for="class">Class:</label>
-                  <select name="class" id="class" required>
+                  <select name="class" id="class" requiredd>
                      <option value="" disabled hidden selected>
                         Choose Class
                      </option>
@@ -208,13 +208,13 @@
                      type="number"
                      name="amount"
                      placeholder="Amount Paid"
-                     required
+                     requiredd
                   />
                </div>
 
                <div class="formGroup">
                   <label for="purpose">Payment for:</label>
-                  <select name="purpose" id="purpose" required>
+                  <select name="purpose" id="purpose" requiredd>
                      <option selected>School Fee</option>
                      <option>Uniform</option>
                      <option>Sport Wear</option>
@@ -234,7 +234,7 @@
                      type="text"
                      name="depositor"
                      placeholder="Enter Depositor's name"
-                     required
+                     requiredd
                   />
                </div>
 
@@ -297,14 +297,14 @@
             <!-- Settings Form -->
             <form class="app__settingsForm">
                <fieldset class="formGroup">
-                  <legend>Settings</legend>
+                  <legend>The Noble Settings</legend>
 
                   <p class="success"></p>
                   <p class="error"></p>
 
                   <div class="formGroup">
-                     <label for="term">Term:</label>
-                     <select name="term" id="term" required>
+                     <label for="tnssTerm">Term:</label>
+                     <select name="tnssTerm" id="tnssTerm" requiredd>
                         <option value="" disabled hidden selected>
                            Choose Term
                         </option>
@@ -315,40 +315,99 @@
                   </div>
 
                   <div class="formGroup">
-                     <label for="session">Session:</label>
-                     <select name="session" id="session" required>
-                        <option value="" disabled hidden selected>
+                     <label for="tnssSession">Session:</label>
+                     <select
+                        name="tnssSession"
+                        id="tnssSession"
+                        class="session"
+                        requiredd
+                     >
+                        <!-- <option value="" disabled hidden selected>
                            Choose Session
                         </option>
                         <option>2020/2021</option>
                         <option>2021/2022</option>
-                        <option>2022/2023</option>
+                        <option>2022/2023</option> -->
+                     </select>
+                  </div>
+               </fieldset>
+
+               <fieldset class="formGroup">
+                  <legend>Madrasah Settings</legend>
+
+                  <div class="formGroup">
+                     <label for="madrasahSemester">Semester:</label>
+                     <select
+                        name="madrasahSemester"
+                        id="madrasahSemester"
+                        requiredd
+                     >
+                        <option value="" disabled hidden selected>
+                           Choose Semester
+                        </option>
+                        <option>1st Semester</option>
+                        <option>2nd Semester</option>
                      </select>
                   </div>
 
-                  <div>
-                     <input type="submit" value="Update" class="btn" />
+                  <div class="formGroup">
+                     <label for="madrasahSession">Session:</label>
+                     <select
+                        name="madrasahSession"
+                        id="madrasahSession"
+                        class="session"
+                        requiredd
+                     >
+                        <!-- <option value="" disabled hidden selected>
+                           Choose Session
+                        </option>
+                        <option>2020/2021</option>
+                        <option>2021/2022</option>
+                        <option>2022/2023</option> -->
+                     </select>
                   </div>
                </fieldset>
+
+               <div>
+                  <input type="submit" value="Update" class="btn" />
+               </div>
             </form>
          </div>
       </div>
 
-      <script src="script/transaction.js"></script>
-      <script src="script/register.js"></script>
+      <script src="script/headerBtns.js"></script>
       <script src="script/login.js"></script>
-      <script src="script/logout.js"></script>
+      <script src="script/register.js"></script>
       <script src="script/settings.js"></script>
+      <script src="script/transaction.js"></script>
 
       <script>
          const name = localStorage.getItem("name");
+         const term = localStorage.getItem("term");
          const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
 
          if (!name) {
             /*** No registered user ***/
             // Show the registration form
             document.querySelector(".app__signupForm").style.display = "block";
-         } else if (name && isLoggedIn) {
+         } else if (!term && isLoggedIn) {
+            /*** No registered term/session ***/
+            // Show the settings form
+            document.querySelector(".app__settingsForm").style.display =
+               "block";
+
+            // Show success msg on settings form
+            document.querySelector(".app__settingsForm .success").innerHTML =
+               "Please update the term, the semester and the session!";
+
+            // Show error msg on settings form
+            document.querySelector(".app__settingsForm .error").innerHTML =
+               "NOTE: This should be updated at the beginning of every term/semester.";
+
+            // Show the header btns
+            document.querySelector(".app__headerBtns").style.display =
+               "inline-block";
+         } else if (isLoggedIn) {
             /*** Registered and LoggedIn ***/
             // Show the transaction form
             document.querySelector(".app__transForm").style.display = "block";

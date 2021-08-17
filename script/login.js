@@ -43,11 +43,11 @@ loginForm.addEventListener("submit", (e) => {
 
          // Show success msg on settings form
          document.querySelector(".app__settingsForm .success").innerHTML =
-            "Logged in successfully, please update the term and the session!";
+            "Logged in successfully, please update the term, the semester and the session!";
 
          // Show error msg on settings form
          document.querySelector(".app__settingsForm .error").innerHTML =
-            "NOTE: This should be updated at the beginning of every term.";
+            "NOTE: This should be updated at the beginning of every term/semester.";
 
          // TODO: Seperate settings box for madrasah and school
       }

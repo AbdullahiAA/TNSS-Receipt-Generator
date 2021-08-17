@@ -79,9 +79,36 @@ transForm.addEventListener("submit", (e) => {
    const purpose = e.target.purpose.value;
    const depositor = e.target.depositor.value;
 
+   let term, session;
+
    //    Get the user data from localStorage
    const userName = localStorage.getItem("name");
    const userType = localStorage.getItem("userType");
+
+   // Get the term and session from the localStorage based on the selected category...
+   transCategory.forEach((category) => {
+      if (category.checked) {
+         // Get the valu of the selected category
+         const value = category.value;
+
+         // Get the term and the session object from the localStorage
+         term = localStorage.getItem("term");
+         session = localStorage.getItem("session");
+
+         // Parse each of the object for easy accessibility
+         term = JSON.parse(term);
+         session = JSON.parse(session);
+
+         // Update the term based on the category
+         if (value === "The Noble") {
+            term = term.tnssTerm;
+            session = session.tnssSession;
+         } else if (value === "Nujabai") {
+            term = term.madrasahSemester;
+            session = session.madrasahSession;
+         }
+      }
+   });
 
    //    Format the amount into Naira...
    const formattedAmount = new Intl.NumberFormat("en-NG", {
@@ -95,7 +122,7 @@ transForm.addEventListener("submit", (e) => {
 
    //    Fill the receipt with the data...
    receiptIDField.innerHTML = generateID();
-   transDateField.innerHTML = transDate;
+   transDateField.innerHTML = transDate + " (" + term + " - " + session + ")";
    stdNameField.innerHTML = stdName;
    classField.innerHTML = stdClass;
    amountField.innerHTML = formattedAmount;
