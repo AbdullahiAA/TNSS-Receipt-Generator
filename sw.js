@@ -1,4 +1,11 @@
-caches.delete();
+// caches.delete();
+
+// caches.open("TNSS-receipt-generator").then(function (cache) {
+//   cache.delete("/script/settings.js").then(function (response) {
+//     console.log("POP");
+// localStorage.setItem("name", JSON.stringify("ALLI"));
+//   });
+// });
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
