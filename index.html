@@ -1,492 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <link rel="shortcut icon" href="icon/icon.jpg" type="image/jpg" />
+    <link rel="shortcut icon" href="icon/icon.jpg" type="image/jpg" />
 
-      <title>TNSS Receipt Generator</title>
+    <title>TNSS Receipt Generator</title>
 
-      <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-         crossorigin="anonymous"
-      />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
 
-      <script src="script/index.js" defer></script>
-      <link rel="manifest" href="/manifest.webmanifest" />
-   </head>
-   <body>
-      <button class="add-button">Add to home screen</button>
+    <script src="script/index.js" defer></script>
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <button class="add-button">Add to home screen</button>
 
-      <div class="app">
-         <div class="app__header">
-            <h2>Receipt Generator</h2>
+    <div class="app">
+      <div class="app__header">
+        <h2>TNSS Receipt Generator</h2>
 
-            <div class="app__headerBtns">
-               <button class="btn transBtn" title="Add Transaction">
-                  <i class="fas fa-plus"></i>
-               </button>
+        <div class="app__headerBtns">
+          <button class="btn transBtn" title="Add Transaction">
+            <i class="fas fa-plus"></i>
+          </button>
 
-               <button class="btn settingsBtn" title="Settings">
-                  <i class="fas fa-cog"></i>
-               </button>
+          <button class="btn settingsBtn" title="Settings">
+            <i class="fas fa-cog"></i>
+          </button>
 
-               <button class="btn logoutBtn" title="Logout">
-                  <i class="fas fa-sign-out-alt"></i>
-               </button>
-            </div>
-         </div>
-
-         <div class="app__body">
-            <!-- Signup Form -->
-            <form class="app__signupForm">
-               <fieldset class="formGroup">
-                  <legend>Registration Form</legend>
-
-                  <p class="error"></p>
-
-                  <div class="formGroup">
-                     <label for="u_name">Name:</label>
-                     <input
-                        id="u_name"
-                        type="text"
-                        name="u_name"
-                        placeholder="Enter your name"
-                        required
-                     />
-                  </div>
-
-                  <div class="formGroup">
-                     <label for="type">User Type:</label>
-                     <select name="type" id="type" required>
-                        <option value="" disabled hidden selected>
-                           Choose User
-                        </option>
-                        <option>Director</option>
-                        <option>Bursar</option>
-                        <option>Headmistress</option>
-                     </select>
-                  </div>
-
-                  <div class="formGroup">
-                     <label for="psw">Password</label>
-                     <input
-                        id="psw"
-                        type="password"
-                        name="psw"
-                        placeholder="Enter your password"
-                        required
-                     />
-                  </div>
-
-                  <div class="formGroup">
-                     <label for="c_psw">Confirm Password:</label>
-                     <input
-                        id="c_psw"
-                        type="password"
-                        name="c_psw"
-                        placeholder="Confirm your password"
-                        required
-                     />
-                  </div>
-                  <div>
-                     <input type="submit" value="Register" class="btn" />
-                  </div>
-               </fieldset>
-            </form>
-
-            <!-- Login Form -->
-            <form class="app__loginForm">
-               <fieldset class="formGroup">
-                  <legend>Login Form</legend>
-
-                  <p class="error"></p>
-                  <p class="success"></p>
-
-                  <div class="formGroup">
-                     <label for="loginType">User Type:</label>
-                     <select name="type" id="loginType" required>
-                        <option value="" disabled hidden selected>
-                           Choose User
-                        </option>
-                        <option>Director</option>
-                        <option>Bursar</option>
-                        <option>Headmistress</option>
-                     </select>
-                  </div>
-
-                  <div class="formGroup">
-                     <label for="loginPsw">Password</label>
-                     <input
-                        id="loginPsw"
-                        type="password"
-                        name="psw"
-                        placeholder="Enter your password"
-                        required
-                     />
-                  </div>
-
-                  <div>
-                     <input type="submit" value="Login" class="btn" />
-                  </div>
-               </fieldset>
-            </form>
-
-            <!-- Transaction Form -->
-            <form class="app__transForm">
-               <fieldset class="formGroup transCat">
-                  <legend>Transaction Category:</legend>
-
-                  <div>
-                     <input
-                        id="theNoble"
-                        type="radio"
-                        name="category"
-                        value="The Noble"
-                        checked
-                     />
-                     <label for="theNoble">The Noble</label>
-                  </div>
-
-                  <div>
-                     <input
-                        id="nujaba"
-                        type="radio"
-                        name="category"
-                        value="Nujabai"
-                     />
-                     <label for="nujaba">Nujabai'</label>
-                  </div>
-               </fieldset>
-
-               <div class="formGroup">
-                  <label for="s_name">Student's Name:</label>
-                  <input
-                     id="s_name"
-                     type="text"
-                     name="name"
-                     placeholder="Enter Student's name"
-                     required
-                  />
-               </div>
-
-               <div class="formGroup">
-                  <label for="class">Class:</label>
-                  <select name="class" id="class" required>
-                     <option value="" disabled hidden selected>
-                        Choose Class
-                     </option>
-                     <option>Creche</option>
-                     <option>K.G 1</option>
-                     <option>K.G 2</option>
-                     <option>NUR 1</option>
-                     <option>NUR 2</option>
-                     <option>PRY 1</option>
-                     <option>PRY 2</option>
-                     <option>PRY 3</option>
-                     <option>PRY 4</option>
-                     <option>PRY 5</option>
-                     <option>JSS 1</option>
-                     <option>JSS 2</option>
-                     <option>JSS 3</option>
-                     <option>SSS 1</option>
-                     <option>SSS 2</option>
-                     <option>SSS 3</option>
-                  </select>
-               </div>
-
-               <div class="formGroup">
-                  <label for="amount">Amount:</label>
-                  <input
-                     id="amount"
-                     type="number"
-                     name="amount"
-                     placeholder="Amount Paid"
-                     required
-                  />
-               </div>
-
-               <fieldset class="formGroup">
-                  <legend>Payment For:</legend>
-                  <div class="paymentForContainer">
-                     <div>
-                        <input
-                           id="schFee"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="School Fee"
-                           checked
-                        />
-                        <label for="schFee">School Fee</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="uniform"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Uniform"
-                        />
-                        <label for="uniform">Uniform</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="sportWear"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Sport Wear"
-                        />
-                        <label for="sportWear">Sport Wear</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="cardigown"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Cardigown"
-                        />
-                        <label for="cardigown">Cardigown</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="jumatWear"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Jumuat Wear"
-                        />
-                        <label for="jumatWear">Jumuat Wear</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="IDCard"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="ID Card"
-                        />
-                        <label for="IDCard">ID Card</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="reportCard"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Report Card"
-                        />
-                        <label for="reportCard">Report Card</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="party"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Party"
-                        />
-                        <label for="party">Party</label>
-                     </div>
-
-                     <div>
-                        <input
-                           id="excursion"
-                           type="checkbox"
-                           name="paymentFor"
-                           value="Excursion"
-                        />
-                        <label for="excursion">Excursion'</label>
-                     </div>
-                  </div>
-               </fieldset>
-
-               <div class="formGroup">
-                  <label for="depositor">Paid By:</label>
-                  <input
-                     id="depositor"
-                     type="text"
-                     name="depositor"
-                     placeholder="Enter Depositor's name"
-                     required
-                  />
-               </div>
-
-               <input type="submit" value="Send" class="btn" />
-            </form>
-
-            <!-- Receipt Preview -->
-            <div class="app__receipt">
-               <div class="app__receipt--header">
-                  <h5 class="app__receipt--schName">
-                     THE NOBLE STANDARD SCHOOLS
-                  </h5>
-                  <p class="app__receipt--addr">
-                     Iyaloja Street, Ayegun Area, Off Olomi-Academy, Ibadan
-                  </p>
-                  <h4 class="app__receipt--title">SCHOOL RECEIPT</h4>
-               </div>
-
-               <div class="app__receipt--body">
-                  <h6>-Receipt ID: <span class="receiptID"></span></h6>
-                  <h6>-Trans Date: <span class="transDate"></span></h6>
-                  <h6>-Student Name: <span class="stdName"></span></h6>
-                  <h6>-Class: <span class="class"></span></h6>
-                  <h6>-Amount Paid: <span class="amount"></span></h6>
-                  <h6>-Purpose: <span class="paymentFor"></span></h6>
-                  <h6>-Payed by: <span class="PayedBy"></span></h6>
-                  <h6>-Tel: <span class="parentTel"></span></h6>
-               </div>
-
-               <div class="app__receipt--footer">
-                  <div>
-                     <h6>Signature:</h6>
-                     <h6 class="PayedBy"></h6>
-                     <h6>(Depositor)</h6>
-                  </div>
-
-                  <div>
-                     <h6>Signature:</h6>
-                     <h6 class="userName"></h6>
-                     <h6 class="userType"></h6>
-                  </div>
-               </div>
-
-               <div class="app__receipt--actionBtns">
-                  <input
-                     type="button"
-                     value="Print"
-                     class="btn printBtn"
-                     onclick="window.print()"
-                  />
-                  <input
-                     type="button"
-                     value="Refresh"
-                     class="btn refreshBtn"
-                     onclick="refreshPage()"
-                  />
-               </div>
-            </div>
-
-            <!-- Settings Form -->
-            <form class="app__settingsForm">
-               <fieldset class="formGroup">
-                  <legend>The Noble Settings</legend>
-
-                  <p class="success"></p>
-                  <p class="error"></p>
-
-                  <div class="formGroup">
-                     <label for="tnssTerm">Term:</label>
-                     <select name="tnssTerm" id="tnssTerm" required>
-                        <option value="" disabled hidden selected>
-                           Choose Term
-                        </option>
-                        <option>1st Term</option>
-                        <option>2nd Term</option>
-                        <option>3rd Term</option>
-                     </select>
-                  </div>
-
-                  <div class="formGroup">
-                     <label for="tnssSession">Session:</label>
-                     <select
-                        name="tnssSession"
-                        id="tnssSession"
-                        class="session"
-                        required
-                     ></select>
-                  </div>
-               </fieldset>
-
-               <fieldset class="formGroup">
-                  <legend>Madrasah Settings</legend>
-
-                  <div class="formGroup">
-                     <label for="madrasahSemester">Semester:</label>
-                     <select
-                        name="madrasahSemester"
-                        id="madrasahSemester"
-                        required
-                     >
-                        <option value="" disabled hidden selected>
-                           Choose Semester
-                        </option>
-                        <option>1st Semester</option>
-                        <option>2nd Semester</option>
-                     </select>
-                  </div>
-
-                  <div class="formGroup">
-                     <label for="madrasahSession">Session:</label>
-                     <select
-                        name="madrasahSession"
-                        id="madrasahSession"
-                        class="session"
-                        required
-                     ></select>
-                  </div>
-               </fieldset>
-
-               <div>
-                  <input type="submit" value="Update" class="btn" />
-               </div>
-            </form>
-         </div>
+          <button class="btn logoutBtn" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
       </div>
 
-      <script src="script/headerBtns.js"></script>
-      <script src="script/login.js"></script>
-      <script src="script/register.js"></script>
-      <script src="script/settings.js"></script>
-      <script src="script/transaction.js"></script>
+      <div class="app__body">
+        <!-- Signup Form -->
+        <form class="app__signupForm">
+          <fieldset class="formGroup">
+            <legend>Registration Form</legend>
 
-      <script>
-         const name = localStorage.getItem("name");
-         const term = localStorage.getItem("term");
-         const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+            <p class="error"></p>
 
-         if (!name) {
-            /*** No registered user ***/
-            // Show the registration form
-            document.querySelector(".app__signupForm").style.display = "block";
-         } else if (!term && isLoggedIn) {
-            /*** No registered term/session ***/
-            // Show the settings form
-            document.querySelector(".app__settingsForm").style.display =
-               "block";
+            <div class="formGroup">
+              <label for="u_name">Name:</label>
+              <input
+                id="u_name"
+                type="text"
+                name="u_name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
 
-            // Show success msg on settings form
-            document.querySelector(".app__settingsForm .success").innerHTML =
-               "Please update the term, the semester and the session!";
+            <div class="formGroup">
+              <label for="type">User Type:</label>
+              <select name="type" id="type" required>
+                <option value="" disabled hidden selected>Choose User</option>
+                <option>Director</option>
+                <option>Bursar</option>
+                <option>Headmistress</option>
+              </select>
+            </div>
 
-            // Show error msg on settings form
-            document.querySelector(".app__settingsForm .error").innerHTML =
-               "NOTE: This should be updated at the beginning of every term/semester.";
+            <div class="formGroup">
+              <label for="psw">Password</label>
+              <input
+                id="psw"
+                type="password"
+                name="psw"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
 
-            // Show the header btns
-            document.querySelector(".app__headerBtns").style.display =
-               "inline-block";
-         } else if (isLoggedIn) {
-            /*** Registered and LoggedIn ***/
-            // Show the transaction form
-            document.querySelector(".app__transForm").style.display = "block";
+            <div class="formGroup">
+              <label for="c_psw">Confirm Password:</label>
+              <input
+                id="c_psw"
+                type="password"
+                name="c_psw"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+            <div>
+              <input type="submit" value="Register" class="btn" />
+            </div>
+          </fieldset>
+        </form>
 
-            // Show the header btns
-            document.querySelector(".app__headerBtns").style.display =
-               "inline-block";
-         } else {
-            /*** Registered but not LoggedIn ***/
-            // Show the Login form
-            document.querySelector(".app__loginForm").style.display = "block";
-         }
-      </script>
-   </body>
+        <!-- Login Form -->
+        <form class="app__loginForm">
+          <fieldset class="formGroup">
+            <legend>Login Form</legend>
+
+            <p class="error"></p>
+            <p class="success"></p>
+
+            <div class="formGroup">
+              <label for="loginType">User Type:</label>
+              <select name="type" id="loginType" required>
+                <option value="" disabled hidden selected>Choose User</option>
+                <option>Director</option>
+                <option>Bursar</option>
+                <option>Headmistress</option>
+              </select>
+            </div>
+
+            <div class="formGroup">
+              <label for="loginPsw">Password</label>
+              <input
+                id="loginPsw"
+                type="password"
+                name="psw"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <div>
+              <input type="submit" value="Login" class="btn" />
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- Transaction Form -->
+        <form class="app__transForm">
+          <fieldset class="formGroup transCat">
+            <legend>Transaction Category:</legend>
+
+            <div>
+              <input
+                id="theNoble"
+                type="radio"
+                name="category"
+                value="The Noble"
+                checked
+              />
+              <label for="theNoble">The Noble</label>
+            </div>
+
+            <div>
+              <input id="nujaba" type="radio" name="category" value="Nujabai" />
+              <label for="nujaba">Nujabai'</label>
+            </div>
+          </fieldset>
+
+          <div class="formGroup">
+            <label for="s_name">Student's Name:</label>
+            <input
+              id="s_name"
+              type="text"
+              name="name"
+              placeholder="Enter Student's name"
+              required
+            />
+          </div>
+
+          <div class="formGroup">
+            <label for="class">Class:</label>
+            <select name="class" id="class" required>
+              <option value="" disabled hidden selected>Choose Class</option>
+              <option>Creche</option>
+              <option>K.G 1</option>
+              <option>K.G 2</option>
+              <option>NUR 1</option>
+              <option>NUR 2</option>
+              <option>PRY 1</option>
+              <option>PRY 2</option>
+              <option>PRY 3</option>
+              <option>PRY 4</option>
+              <option>PRY 5</option>
+              <option>JSS 1</option>
+              <option>JSS 2</option>
+              <option>JSS 3</option>
+              <option>SSS 1</option>
+              <option>SSS 2</option>
+              <option>SSS 3</option>
+            </select>
+          </div>
+
+          <div class="formGroup">
+            <label for="amount">Amount:</label>
+            <input
+              id="amount"
+              type="number"
+              name="amount"
+              placeholder="Amount Paid"
+              required
+            />
+          </div>
+
+          <fieldset class="formGroup">
+            <legend>Payment For:</legend>
+            <div class="paymentForContainer">
+              <div>
+                <input
+                  id="schFee"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="School Fee"
+                  checked
+                />
+                <label for="schFee">School Fee</label>
+              </div>
+
+              <div>
+                <input
+                  id="uniform"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Uniform"
+                />
+                <label for="uniform">Uniform</label>
+              </div>
+
+              <div>
+                <input
+                  id="sportWear"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Sport Wear"
+                />
+                <label for="sportWear">Sport Wear</label>
+              </div>
+
+              <div>
+                <input
+                  id="cardigown"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Cardigown"
+                />
+                <label for="cardigown">Cardigown</label>
+              </div>
+
+              <div>
+                <input
+                  id="jumatWear"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Jumuat Wear"
+                />
+                <label for="jumatWear">Jumuat Wear</label>
+              </div>
+
+              <div>
+                <input
+                  id="IDCard"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="ID Card"
+                />
+                <label for="IDCard">ID Card</label>
+              </div>
+
+              <div>
+                <input
+                  id="reportCard"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Report Card"
+                />
+                <label for="reportCard">Report Card</label>
+              </div>
+
+              <div>
+                <input
+                  id="party"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Party"
+                />
+                <label for="party">Party</label>
+              </div>
+
+              <div>
+                <input
+                  id="excursion"
+                  type="checkbox"
+                  name="paymentFor"
+                  value="Excursion"
+                />
+                <label for="excursion">Excursion'</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="formGroup">
+            <label for="depositor">Paid By:</label>
+            <input
+              id="depositor"
+              type="text"
+              name="depositor"
+              placeholder="Enter Depositor's name"
+              required
+            />
+          </div>
+
+          <input type="submit" value="Send" class="btn" />
+        </form>
+
+        <!-- Receipt Preview -->
+        <div class="app__receipt">
+          <div class="app__receipt--header">
+            <h5 class="app__receipt--schName">THE NOBLE STANDARD SCHOOLS</h5>
+            <p class="app__receipt--addr">
+              Iyaloja Street, Ayegun Area, Off Olomi-Academy, Ibadan
+            </p>
+            <h4 class="app__receipt--title">SCHOOL RECEIPT</h4>
+          </div>
+
+          <div class="app__receipt--body">
+            <h6>-Receipt ID: <span class="receiptID"></span></h6>
+            <h6>-Trans Date: <span class="transDate"></span></h6>
+            <h6>-Student Name: <span class="stdName"></span></h6>
+            <h6>-Class: <span class="class"></span></h6>
+            <h6>-Amount Paid: <span class="amount"></span></h6>
+            <h6>-Purpose: <span class="paymentFor"></span></h6>
+            <h6>-Paid by: <span class="PayedBy"></span></h6>
+            <h6>-Tel: <span class="parentTel"></span></h6>
+          </div>
+
+          <div class="app__receipt--footer">
+            <div>
+              <h6>Signature:</h6>
+              <h6 class="PayedBy"></h6>
+              <h6>(Depositor)</h6>
+            </div>
+
+            <div>
+              <h6>Signature:</h6>
+              <h6 class="userName"></h6>
+              <h6 class="userType"></h6>
+            </div>
+          </div>
+
+          <div class="app__receipt--actionBtns">
+            <input
+              type="button"
+              value="Print"
+              class="btn printBtn"
+              onclick="window.print()"
+            />
+            <input
+              type="button"
+              value="Refresh"
+              class="btn refreshBtn"
+              onclick="refreshPage()"
+            />
+          </div>
+        </div>
+
+        <!-- Settings Form -->
+        <form class="app__settingsForm">
+          <fieldset class="formGroup">
+            <legend>The Noble Settings</legend>
+
+            <p class="success"></p>
+            <p class="error"></p>
+
+            <div class="formGroup">
+              <label for="tnssTerm">Term:</label>
+              <select name="tnssTerm" id="tnssTerm" required>
+                <option value="" disabled hidden selected>Choose Term</option>
+                <option>1st Term</option>
+                <option>2nd Term</option>
+                <option>3rd Term</option>
+              </select>
+            </div>
+
+            <div class="formGroup">
+              <label for="tnssSession">Session:</label>
+              <select
+                name="tnssSession"
+                id="tnssSession"
+                class="session"
+                required
+              ></select>
+            </div>
+          </fieldset>
+
+          <fieldset class="formGroup">
+            <legend>Madrasah Settings</legend>
+
+            <div class="formGroup">
+              <label for="madrasahSemester">Semester:</label>
+              <select name="madrasahSemester" id="madrasahSemester" required>
+                <option value="" disabled hidden selected>
+                  Choose Semester
+                </option>
+                <option>1st Semester</option>
+                <option>2nd Semester</option>
+              </select>
+            </div>
+
+            <div class="formGroup">
+              <label for="madrasahSession">Session:</label>
+              <select
+                name="madrasahSession"
+                id="madrasahSession"
+                class="session"
+                required
+              ></select>
+            </div>
+          </fieldset>
+
+          <div>
+            <input type="submit" value="Update" class="btn" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script/headerBtns.js"></script>
+    <script src="script/login.js"></script>
+    <script src="script/register.js"></script>
+    <script src="script/settings.js"></script>
+    <script src="script/transaction.js"></script>
+
+    <script>
+      const name = localStorage.getItem("name");
+      const term = localStorage.getItem("term");
+      const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+
+      if (!name) {
+        /*** No registered user ***/
+        // Show the registration form
+        document.querySelector(".app__signupForm").style.display = "block";
+      } else if (!term && isLoggedIn) {
+        /*** No registered term/session ***/
+        // Show the settings form
+        document.querySelector(".app__settingsForm").style.display = "block";
+
+        // Show success msg on settings form
+        document.querySelector(".app__settingsForm .success").innerHTML =
+          "Please update the term, the semester and the session!";
+
+        // Show error msg on settings form
+        document.querySelector(".app__settingsForm .error").innerHTML =
+          "NOTE: This should be updated at the beginning of every term/semester.";
+
+        // Show the header btns
+        document.querySelector(".app__headerBtns").style.display =
+          "inline-block";
+      } else if (isLoggedIn) {
+        /*** Registered and LoggedIn ***/
+        // Show the transaction form
+        document.querySelector(".app__transForm").style.display = "block";
+
+        // Show the header btns
+        document.querySelector(".app__headerBtns").style.display =
+          "inline-block";
+      } else {
+        /*** Registered but not LoggedIn ***/
+        // Show the Login form
+        document.querySelector(".app__loginForm").style.display = "block";
+      }
+    </script>
+  </body>
 </html>
