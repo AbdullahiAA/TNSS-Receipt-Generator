@@ -1,14 +1,5 @@
 const loginForm = document.querySelector(".app__loginForm");
 
-if (typeof window !== "undefined") {
-  console.log("You are on the browser");
-  localStorage.clear();
-  // 👉️ can use localStorage here
-} else {
-  console.log("You are on the server");
-  // 👉️ can't use localStorage
-}
-
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
